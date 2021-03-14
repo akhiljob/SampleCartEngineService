@@ -10,13 +10,13 @@ export class TierPriceRule extends BaseEntity {
     public promotion_id: number;
 
     @Column()
-    public tier_promotion_quantity : string;
+    public tier_promotion_quantity : number;
 
     @Column()
-    public tier_product_id: string;
+    public tier_product_id: number;
 
 
-    @Column()
-    public tier_promotion_amount: string;
+    @Column({type: "float"})
+    public tier_promotion_amount: number;
 
 }

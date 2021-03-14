@@ -1,7 +1,8 @@
-import { Product } from "../entity/Product";
+import { CartPromotionRule } from "../entity/CartPromotionRule";
+import { PromotionRule } from "../entity/PromotionRule";
 
 
-class ProductDao {
+class CartPromotionRuleDao {
     public getAll(searchParam: any, limit: number, offset: number): Promise<any> {
         throw new Error("Method not implemented.");
     }
@@ -11,7 +12,7 @@ class ProductDao {
     }
    
     public create(data: any): Promise<any> {
-        return Product.save(data);
+        return CartPromotionRule.save(data);
     }
 
     public update(id: any, data: any): Promise<any> {
@@ -19,6 +20,6 @@ class ProductDao {
     }
    
 }
+const cartPromotionRuleDao = new CartPromotionRuleDao();
 
-const productDao = new ProductDao();
-export default productDao;
+export default cartPromotionRuleDao;

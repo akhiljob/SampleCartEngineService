@@ -1,7 +1,7 @@
-import { Product } from "../entity/Product";
+import { TierPriceRule } from "../entity/TierPriceRule";
 
 
-class ProductDao {
+class TierPriceRuleDao {
     public getAll(searchParam: any, limit: number, offset: number): Promise<any> {
         throw new Error("Method not implemented.");
     }
@@ -11,7 +11,7 @@ class ProductDao {
     }
    
     public create(data: any): Promise<any> {
-        return Product.save(data);
+        return TierPriceRule.save(data);
     }
 
     public update(id: any, data: any): Promise<any> {
@@ -19,6 +19,5 @@ class ProductDao {
     }
    
 }
-
-const productDao = new ProductDao();
-export default productDao;
+const tierPriceRuleDao = new TierPriceRuleDao();
+export default tierPriceRuleDao;

@@ -8,4 +8,9 @@ const APP_CONSTANTS = {
     service: "cart-svc"
 };
 
+export enum PROMOTION_TYPES {
+    TIER_PRICE_RULE= 'TIER_PRICE_RULE',
+    CART_PROMOTION_RULE = 'CART_PROMOTION_RULE'
+}
+
 export default APP_CONSTANTS;

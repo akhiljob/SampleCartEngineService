@@ -7,27 +7,15 @@ export class PromotionRule extends BaseEntity {
     public id: number;
 
     @Column()
-    public promotion_name: string;
-
-    @Column()
-    public promotion_coupon: string;
-
-    @Column()
-    public promotion_description: string;
+    public name: string;
 
 
     @Column()
-    public promotion_type: string;
+    public description: string;
+
 
     @Column()
-    public promotion_definition_id: number
-
-    @Column()
-    public cart_promotion_amount: string;
-
-
-
-
+    public type: string;
 
 
 }

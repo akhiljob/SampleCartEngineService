@@ -1,12 +1,15 @@
 import { NextFunction, Response } from "express";
+import { PromotionRuleServiceImpl } from "../service/PromotionRuleServiceImpl";
 import { AbstractController } from "../util/rest/controller";
 import RequestWithUser from "../util/rest/request";
 import HealthController from "./HealthController";
 
 class PromotionRuleController extends AbstractController {
+private promotionRuleService: PromotionRuleServiceImpl;
+    constructor(promotionRuleService: PromotionRuleServiceImpl) {
 
-    constructor() {
       super("/promotion_rules");
+      this.promotionRuleService = promotionRuleService;
       this.initializeRoutes();
     }
   
@@ -18,20 +21,23 @@ class PromotionRuleController extends AbstractController {
   
     private getAllPromotions = async (request: RequestWithUser, response: Response, next: NextFunction) => {
   
-        // TODO retirieve list of  promotions available
+        // TODO retrieve list of  promotions available
   
     }
 
     private createTierPriceRule = async (request: RequestWithUser, response: Response, next: NextFunction) => {
   
-            // TODO createTierPriceRule to create tier prices for products
-          
+            const tierPriceInfo = request.body;
+            const result = this.promotionRuleService.createTierPriceRule(tierPriceInfo);
+            response.send(this.fmt.formatResponse(result, Date.now() - request.startTime, "OK"));
             }
 
 
     private createCartDiscountRule = async (request: RequestWithUser, response: Response, next: NextFunction) => {
   
-            // TODO createOrderDiscountRule to create order level/cart level discounts for products
+            const cartPromotionalRuleInfo = request.body;
+            const result = this.promotionRuleService.createCartPromotionRule(cartPromotionalRuleInfo);
+            response.send(this.fmt.formatResponse(result, Date.now() - request.startTime, "OK"));
           
             }
 

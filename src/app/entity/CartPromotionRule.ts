@@ -9,12 +9,12 @@ export class CartPromotionRule extends BaseEntity {
     @Column()
     public promotion_id: number;
 
-    @Column()
-    public cart_discount_amount : string;
 
-    @Column()
-    public cart_discount_percentage : string;
+    @Column({type: "float"})
+    public cart_discount_amount : number;
 
+    @Column({type: "float"})
+    public cart_min_amount : number;
   
 
 }
