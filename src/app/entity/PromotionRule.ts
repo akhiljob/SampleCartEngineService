@@ -1,7 +1,7 @@
 import { Entity, BaseEntity, Generated, PrimaryColumn, Column } from "typeorm";
 
 @Entity()
-class PromotionRule extends BaseEntity {
+export class PromotionRule extends BaseEntity {
     @PrimaryColumn()
     @Generated("increment")
     public id: number;

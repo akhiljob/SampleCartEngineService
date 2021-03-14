@@ -1,20 +1,18 @@
 import { Entity, BaseEntity, Generated, PrimaryColumn, Column } from "typeorm";
 
 @Entity()
-export class CartPromotionRule extends BaseEntity {
+export class Product extends BaseEntity {
     @PrimaryColumn()
     @Generated("increment")
     public id: number;
 
     @Column()
-    public promotion_id: number;
+    public name: string;
 
     @Column()
-    public cart_discount_amount : string;
+    public description : string;
 
-    @Column()
-    public cart_discount_percentage : string;
-
-  
+    @Column({type: "float"})
+    public unit_price: number;
 
 }

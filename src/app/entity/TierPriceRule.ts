@@ -1,7 +1,7 @@
 import { Entity, BaseEntity, Generated, PrimaryColumn, Column } from "typeorm";
 
 @Entity()
-class TierPriceRule extends BaseEntity {
+export class TierPriceRule extends BaseEntity {
     @PrimaryColumn()
     @Generated("increment")
     public id: number;

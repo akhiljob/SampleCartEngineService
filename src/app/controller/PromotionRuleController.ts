@@ -14,7 +14,6 @@ class PromotionRuleController extends AbstractController {
       this.router.get(`${this.path}`, this.asyncRouteHandler(this.getAllPromotions));
       this.router.post(`${this.path}/tier_price_rule`, this.asyncRouteHandler(this.createTierPriceRule));
       this.router.post(`${this.path}/cart_discount_rule`, this.asyncRouteHandler(this.createCartDiscountRule));
-      this.router.post(`${this.path}/product_discount_rule`, this.asyncRouteHandler(this.createProductDiscountRule));
     }
   
     private getAllPromotions = async (request: RequestWithUser, response: Response, next: NextFunction) => {
@@ -36,13 +35,7 @@ class PromotionRuleController extends AbstractController {
           
             }
 
-
-    private createProductDiscountRule = async (request: RequestWithUser, response: Response, next: NextFunction) => {
-  
-            // TODO createProductDiscountRule to create discount prices for products
-          
-            }
   }
   
-  export default HealthController;
+  export default PromotionRuleController;
   

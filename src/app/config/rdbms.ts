@@ -41,7 +41,7 @@ const config: { [key: string]: PostgresConnectionOptions } = {
     host: process.env.POSTGRES_HOST,
     password: process.env.POSTGRES_PASSWORD,
     port: Number(process.env.POSTGRES_PORT),
-    synchronize: false,
+    synchronize: true,
     logging: true,
     type: "postgres",
     username: process.env.POSTGRES_USER,
